@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -48,14 +49,21 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public Category update(Category category) {		
+	public Category update(Category category) {
 		return categoryRepository.save(category);
 	}
 
 	@Override
 	public Category findById(Long id) {
 		Optional<Category> categoria = categoryRepository.findById(id);
-		return (categoria.isPresent())?categoria.get():null;
+		return (categoria.isPresent()) ? categoria.get() : null;
+	}
+
+	@Override
+	public List<Category> findAllPageable(int skip, int top) {
+		final Pageable page = PageRequest.of(skip, top);
+		Page<Category> result = categoryRepository.findAll(page);
+		return (result.getPageable() != null) ? result.getContent() : null;
 	}
 
 }

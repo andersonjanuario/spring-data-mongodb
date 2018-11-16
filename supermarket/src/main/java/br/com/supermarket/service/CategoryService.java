@@ -2,9 +2,6 @@ package br.com.supermarket.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import br.com.supermarket.dto.Category;
 
 /**
@@ -21,6 +18,8 @@ public interface CategoryService {
 	Category create(Category category);
 
 	List<Category> findAll();
+	
+	List<Category> findAllPageable(int skip, int top);
 
 	void remove(Long id);
 

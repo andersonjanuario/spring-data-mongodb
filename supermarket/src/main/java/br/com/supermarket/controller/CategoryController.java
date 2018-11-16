@@ -3,7 +3,6 @@ package br.com.supermarket.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.supermarket.dto.Category;
@@ -34,7 +34,13 @@ public class CategoryController {
 	public ResponseEntity<List<Category>> findAll() {
 		return ResponseEntity.ok(categoryService.findAll());
 	}
-	
+
+	@GetMapping(value = "/category/pageable", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Category>> findAllPageable(@RequestParam("skip") int skip,
+			@RequestParam("top") int top) {
+		return ResponseEntity.ok(categoryService.findAllPageable(skip, top));
+	}
+
 	@GetMapping(value = "/category/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Category> findByName(@PathVariable("name") String name) {
 		return ResponseEntity.ok(categoryService.findByName(name));
@@ -65,5 +71,5 @@ public class CategoryController {
 		categoryService.remove(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
-	
+
 }
