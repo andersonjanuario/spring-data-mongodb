@@ -4,16 +4,21 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * The Class SuperMarket.
+ */
 public class SuperMarket implements Serializable {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 5639214561419981230L;
+
 	@Id
 	private long id;
+
 	private String name;
+
 	private String country;
+
 	private String image;
 
 	public long getId() {

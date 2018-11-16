@@ -6,18 +6,23 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * The Class Purchase.
+ */
 public class Purchase implements Serializable {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4134691762320231843L;
+
 	@Id
 	private long id;
-	
+
 	private Date date;
-	
+
 	private SuperMarket superMarket;
-		
+
 	private float totalPrice;
-	
+
 	private List<Item> items;
 
 	public long getId() {
@@ -59,5 +64,5 @@ public class Purchase implements Serializable {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
-
+	
 }

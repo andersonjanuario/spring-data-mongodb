@@ -4,17 +4,23 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * The Class Item.
+ */
 public class Item implements Serializable {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -4456415423267134424L;
+
 	@Id
 	private long id;
+
 	private String name;
+
 	private Category category;
+
 	private String brand;
+
 	private float price;
 
 	public long getId() {
