@@ -5,17 +5,22 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
 
 /**
  * The Class Purchase.
  */
+@Data
+@Document(collection = "purchase")
 public class Purchase implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4134691762320231843L;
 
 	@Id
-	private long id;
+	private String id;
 
 	private Date date;
 
@@ -23,46 +28,6 @@ public class Purchase implements Serializable {
 
 	private float totalPrice;
 
-	private List<Item> items;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public SuperMarket getSuperMarket() {
-		return superMarket;
-	}
-
-	public void setSuperMarket(SuperMarket superMarket) {
-		this.superMarket = superMarket;
-	}
-
-	public float getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(float totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+	private List<Item> items;	
 	
 }
