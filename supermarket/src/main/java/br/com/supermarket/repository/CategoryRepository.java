@@ -11,7 +11,7 @@ import br.com.supermarket.dto.Category;
 /**
  * The Interface CategoryRepository.
  */
-public interface CategoryRepository extends MongoRepository<Category, Long> {
+public interface CategoryRepository extends MongoRepository<Category, String> {
 
 	public Category findByName(String name);
 

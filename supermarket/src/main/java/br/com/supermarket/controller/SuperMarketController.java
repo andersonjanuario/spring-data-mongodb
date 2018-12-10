@@ -35,7 +35,7 @@ public class SuperMarketController {
 	}
 
 	@GetMapping(value = "/supermarket/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<SuperMarket> findById(@PathVariable("id") Long id) {
+	public ResponseEntity<SuperMarket> findById(@PathVariable("id") String id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -50,7 +50,7 @@ public class SuperMarketController {
 	}
 
 	@DeleteMapping(value = "/supermarket/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> remove(@PathVariable("id") Long id) {
+	public ResponseEntity<Void> remove(@PathVariable("id") String id) {
 		service.remove(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}

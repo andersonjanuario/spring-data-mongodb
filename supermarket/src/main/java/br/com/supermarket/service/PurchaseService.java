@@ -9,13 +9,13 @@ import br.com.supermarket.dto.Purchase;
  */
 public interface PurchaseService {
 
-	Purchase findById(Long id);
+	Purchase findById(String id);
 
 	Purchase create(Purchase purchase);
 
 	List<Purchase> findAll();
 
-	void remove(Long id);
+	void remove(String id);
 
 	Purchase update(Purchase purchase);
 

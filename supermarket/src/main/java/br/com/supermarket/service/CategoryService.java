@@ -13,7 +13,7 @@ public interface CategoryService {
 
 	Category findByName(String name);
 
-	Category findById(Long id);
+	Category findById(String id);
 
 	Category create(Category category);
 
@@ -21,7 +21,7 @@ public interface CategoryService {
 	
 	List<Category> findAllPageable(int skip, int top);
 
-	void remove(Long id);
+	void remove(String id);
 
 	Category update(Category category);
 

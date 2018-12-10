@@ -7,6 +7,6 @@ import br.com.supermarket.dto.SuperMarket;
 /**
  * The Interface SuperMarketRepository.
  */
-public interface SuperMarketRepository extends MongoRepository<SuperMarket, Long> {
+public interface SuperMarketRepository extends MongoRepository<SuperMarket, String> {
 
 }

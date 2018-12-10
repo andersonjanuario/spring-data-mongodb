@@ -9,13 +9,13 @@ import br.com.supermarket.dto.Item;
  */
 public interface ItemService {
 
-	Item findById(Long id);
+	Item findById(String id);
 
 	Item create(Item item);
 
 	List<Item> findAll();
 
-	void remove(Long id);
+	void remove(String id);
 
 	Item update(Item item);
 

@@ -34,7 +34,7 @@ public class ItemServiceImpl implements ItemService, Validation<Item> {
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(String id) {
 		repository.deleteById(id);
 	}
 
@@ -44,7 +44,7 @@ public class ItemServiceImpl implements ItemService, Validation<Item> {
 	}
 
 	@Override
-	public Item findById(Long id) {
+	public Item findById(String id) {
 		Optional<Item> categoria = repository.findById(id);
 		return (categoria.isPresent())?categoria.get():null;
 	}

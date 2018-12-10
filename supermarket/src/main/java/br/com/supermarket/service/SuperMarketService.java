@@ -9,13 +9,13 @@ import br.com.supermarket.dto.SuperMarket;
  */
 public interface SuperMarketService {
 
-	SuperMarket findById(Long id);
+	SuperMarket findById(String id);
 
 	SuperMarket create(SuperMarket superMarket);
 
 	List<SuperMarket> findAll();
 
-	void remove(Long id);
+	void remove(String id);
 
 	SuperMarket update(SuperMarket superMarket);
 

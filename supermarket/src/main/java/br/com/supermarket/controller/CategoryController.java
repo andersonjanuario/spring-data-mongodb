@@ -47,7 +47,7 @@ public class CategoryController {
 	}
 
 	@GetMapping(value = "/category/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Category> findById(@PathVariable("id") Long id) {
+	public ResponseEntity<Category> findById(@PathVariable("id") String id) {
 		return ResponseEntity.ok(categoryService.findById(id));
 	}
 
@@ -67,7 +67,7 @@ public class CategoryController {
 	}
 
 	@DeleteMapping(value = "/category/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> remove(@PathVariable("id") Long id) {
+	public ResponseEntity<Void> remove(@PathVariable("id") String id) {
 		categoryService.remove(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}

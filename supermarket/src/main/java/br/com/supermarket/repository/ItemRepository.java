@@ -7,6 +7,6 @@ import br.com.supermarket.dto.Item;
 /**
  * The Interface ItemRepository.
  */
-public interface ItemRepository extends MongoRepository<Item, Long> {
+public interface ItemRepository extends MongoRepository<Item, String> {
 
 }

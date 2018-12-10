@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService, Validation<Category
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(String id) {
 		categoryRepository.deleteById(id);
 	}
 
@@ -58,7 +58,7 @@ public class CategoryServiceImpl implements CategoryService, Validation<Category
 	}
 
 	@Override
-	public Category findById(Long id) {
+	public Category findById(String id) {
 		Optional<Category> categoria = categoryRepository.findById(id);
 		return (categoria.isPresent()) ? categoria.get() : null;
 	}

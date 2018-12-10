@@ -34,7 +34,7 @@ public class SuperMarketServiceImpl implements SuperMarketService ,Validation<Su
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(String id) {
 		repository.deleteById(id);
 	}
 
@@ -44,7 +44,7 @@ public class SuperMarketServiceImpl implements SuperMarketService ,Validation<Su
 	}
 
 	@Override
-	public SuperMarket findById(Long id) {
+	public SuperMarket findById(String id) {
 		Optional<SuperMarket> purchase = repository.findById(id);
 		return (purchase.isPresent())?purchase.get():null;
 	}

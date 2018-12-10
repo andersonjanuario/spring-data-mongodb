@@ -35,7 +35,7 @@ public class ItemController {
 	}
 
 	@GetMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Item> findById(@PathVariable("id") Long id) {
+	public ResponseEntity<Item> findById(@PathVariable("id") String id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -50,7 +50,7 @@ public class ItemController {
 	}
 
 	@DeleteMapping(value = "/item/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> remove(@PathVariable("id") Long id) {
+	public ResponseEntity<Void> remove(@PathVariable("id") String id) {
 		service.remove(id);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}

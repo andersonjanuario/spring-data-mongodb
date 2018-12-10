@@ -35,7 +35,7 @@ public class PurchaseServiceImpl implements PurchaseService, Validation<Purchase
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(String id) {
 		repository.deleteById(id);
 	}
 
@@ -45,7 +45,7 @@ public class PurchaseServiceImpl implements PurchaseService, Validation<Purchase
 	}
 
 	@Override
-	public Purchase findById(Long id) {
+	public Purchase findById(String id) {
 		Optional<Purchase> purchase = repository.findById(id);
 		return (purchase.isPresent())?purchase.get():null;
 	}
