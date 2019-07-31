@@ -14,9 +14,6 @@ import lombok.Data;
 @Document(collection = "category")
 public class Category implements Serializable {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -2541466788915466125L;
-
 	@Id
 	private String id;
 

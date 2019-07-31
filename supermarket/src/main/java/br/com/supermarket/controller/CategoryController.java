@@ -58,12 +58,12 @@ public class CategoryController {
 
 	@PostMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Category> create(@RequestBody Category category) {
-		return ResponseEntity.ok(categoryService.create(category));
+		return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.create(category));
 	}
 
-	@PutMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Category> update(@RequestBody Category category) {
-		return ResponseEntity.ok(categoryService.update(category));
+	@PutMapping(value = "/category/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Category> update(@PathVariable("id") String id, @RequestBody Category category) {
+		return ResponseEntity.ok(categoryService.update(id, category));
 	}
 
 	@DeleteMapping(value = "/category/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -4,12 +4,11 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class ExceptionResponse implements Serializable {
 
-	private static final long serialVersionUID = 276919116683314074L;
 	private String code;
 	private List<String> messages;
 

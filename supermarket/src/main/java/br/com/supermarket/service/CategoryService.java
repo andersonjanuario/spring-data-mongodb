@@ -23,6 +23,6 @@ public interface CategoryService {
 
 	void remove(String id);
 
-	Category update(Category category);
+	Category update(String id, Category category);
 
 }

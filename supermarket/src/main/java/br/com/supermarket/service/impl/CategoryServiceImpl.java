@@ -53,7 +53,10 @@ public class CategoryServiceImpl implements CategoryService, Validation<Category
 	}
 
 	@Override
-	public Category update(Category category) {
+	public Category update(String id, Category category) {
+		if(!categoryRepository.findById(id).isPresent()){
+			
+		}
 		return categoryRepository.save(category);
 	}
 

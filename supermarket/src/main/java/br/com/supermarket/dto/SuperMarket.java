@@ -14,9 +14,6 @@ import lombok.Data;
 @Document(collection = "superMarket")
 public class SuperMarket implements Serializable {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 5639214561419981230L;
-
 	@Id
 	private String id;
 

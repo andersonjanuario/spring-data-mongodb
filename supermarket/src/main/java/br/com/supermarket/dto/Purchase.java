@@ -1,7 +1,7 @@
 package br.com.supermarket.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -16,13 +16,10 @@ import lombok.Data;
 @Document(collection = "purchase")
 public class Purchase implements Serializable {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 4134691762320231843L;
-
 	@Id
 	private String id;
 
-	private Date date;
+	private ZonedDateTime date;
 
 	private SuperMarket superMarket;
 
